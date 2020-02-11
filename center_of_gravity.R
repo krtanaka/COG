@@ -11,8 +11,8 @@ rm(list = ls())
 
 q = 0.08
 
-coast = readOGR(dsn='/Users/ktanaka/COG/GIS/Gulf of Maine 15 m contour lines/', layer='gom15ctr')
-zones = readOGR(dsn='/Users/ktanaka/COG/GIS/Maine Lobster Management Zones/', layer='lob_zone_lines_dd')
+coast = readOGR(dsn='GIS/Gulf of Maine 15 m contour lines/', layer='gom15ctr')
+zones = readOGR(dsn='GIS/Maine Lobster Management Zones/', layer='lob_zone_lines_dd')
 
 a = list("sp.polygons", coast)
 
