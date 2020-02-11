@@ -7,19 +7,19 @@ library(scales) #for transparency
 library(mgcv)
 library(ggplot2)
 
+rm(list = ls())
+
 q = 0.08
 
-coast = readOGR(dsn='/Users/ktanaka/Google Drive/Research/GIS/Gulf of Maine 15 m contour lines/', layer='gom15ctr')
-zones = readOGR(dsn='/Users/ktanaka/Google Drive/Research/GIS/Maine Lobster Management Zones/', layer='lob_zone_lines_dd')
+coast = readOGR(dsn='/Users/ktanaka/COG/GIS/Gulf of Maine 15 m contour lines/', layer='gom15ctr')
+zones = readOGR(dsn='/Users/ktanaka/COG/GIS/Maine Lobster Management Zones/', layer='lob_zone_lines_dd')
 
 a = list("sp.polygons", coast)
 
-load("/Users/ktanaka/Google Drive/Research/Trawl Survey Data/MENH/data/fall_spring.RData")
-load("/Users/ktanaka/Desktop/TweedieGAMResult_w_FVCOM.RData")
-load("/Users/ktanaka/Desktop/TweedieGAMResult.RData")
+load("/Users/ktanaka/COG/Data/fall_spring.RData")
+load("/Users/ktanaka/COG/Data/TweedieGAMResult_w_FVCOM.RData")
+load("/Users/ktanaka/COG/Data/TweedieGAMResult.RData")
 
-#----Spring-----
-# define observed groups
 lobster1 = "std_female_adult"
 lobster2 = "std_male_adult"
 lobster3 = "std_female_juvenile"
