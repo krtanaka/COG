@@ -11,14 +11,14 @@ rm(list = ls())
 
 q = 0.08
 
-coast = readOGR(dsn='GIS/Gulf of Maine 15 m contour lines/', layer='gom15ctr')
-zones = readOGR(dsn='GIS/Maine Lobster Management Zones/', layer='lob_zone_lines_dd')
+coast = readOGR(dsn='GIS/Gulf of Maine 15 m contour lines/gom15ctr.shp')
+zones = readOGR(dsn='GIS/Maine Lobster Management Zones/lob_zone_lines_dd.shp')
 
 a = list("sp.polygons", coast)
 
-load("/Users/ktanaka/COG/Data/fall_spring.RData")
-load("/Users/ktanaka/COG/Data/TweedieGAMResult_w_FVCOM.RData")
-load("/Users/ktanaka/COG/Data/TweedieGAMResult.RData")
+load("Data/fall_spring.RData")
+load("Data/TweedieGAMResult_w_FVCOM.RData")
+load("Data/TweedieGAMResult.RData")
 
 lobster1 = "std_female_adult"
 lobster2 = "std_male_adult"
@@ -139,7 +139,9 @@ l1 = function(lobster){
   return(gravity)
   
   
-}#observed COGs
+}
+
+#observed COGs
 l2 = function(lobster){
   
   ts2001 = data[ which(data$year == 2001),]
@@ -296,3 +298,4 @@ scalebar(d = 20, xy = NULL, type = 'bar', divs = 4, below = 'km', cex = 2, adj =
 l1(lobster4)#MJ
 legend("bottomright", "SP_JUV_M", lty = 0.5, lwd = 0.5, bty = "n", cex = 4)
 l2(lobster4)#MJ
+
