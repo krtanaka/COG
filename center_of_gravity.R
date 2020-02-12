@@ -58,9 +58,9 @@ l1 = function(lobster){
     x[[i]] = na.exclude(x[[i]][, c("La", "Lo", "D", lobster)])
     tstemp = data.frame(x[[i]])
     
-    X=sum(tstemp[, 4]*tstemp[, 2])/sum(tstemp[, 4]) #for Lon
-    Y=sum(tstemp[, 4]*tstemp[, 1])/sum(tstemp[, 4]) #for Lat
-    Z=sum(tstemp[, 4]*tstemp[, 3])/sum(tstemp[, 4]) #for Depth
+    X=sum(tstemp[, 4]*tstemp[, 2])/sum(tstemp[, 4]) #mean lon weighted by catch
+    Y=sum(tstemp[, 4]*tstemp[, 1])/sum(tstemp[, 4]) #mean lat weighted by catch
+    Z=sum(tstemp[, 4]*tstemp[, 3])/sum(tstemp[, 4]) #mean depth weighted by catch
     
     gravity[i, 1] = X
     gravity[i, 2] = Y
